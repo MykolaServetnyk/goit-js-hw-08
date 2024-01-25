@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.gallery {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+
+}
+
+.gallery__item {
+
+    margin: 15px;
+    width: 360px;
+    flex: 0 0 calc(33.333% - 10px);
+    box-sizing: border-box;
+}
+
+.gallery_image {
+
+    display: block;
+    width: 100%;
+    height: auto;
+}
