@@ -16,15 +16,15 @@ body {
 
 }
 
-.gallery__item {
+.gallery-item {
 
     margin: 15px;
     width: 360px;
-    flex: 0 0 calc(33.333% - 10px);
+    gap: 24px;
     box-sizing: border-box;
 }
 
-.gallery_image {
+.gallery-image {
 
     display: block;
     width: 100%;

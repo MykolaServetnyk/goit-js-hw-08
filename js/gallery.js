@@ -84,6 +84,34 @@ function createBoxItem(images) {
             </a>`).join('')
 };
 
+galleryEl.addEventListener('click', onGalleryElClick);
+
+let modalWindow;
+
+function onGalleryElClick(event) {
+    event.preventDefault();
+    if (event.target.nodeName !== "IMG") {
+        return;
+    }
+    modalWindow = basicLightbox.create(
+        `<img src='${event.target.dataset.source}' width="800" height="600">`,
+        {
+            onShow: modalWindow => {
+                window.addEventListener('keydown', onEscKeyPress);
+            },
+            onClose: modalWindow => {
+                window.removeEventListener('keydown', onEscKeyPress);
+            },
+        }
+    );
+
+    function onEscKeyPress(evt) {
+        if (evt.code === "Escape" && basicLightbox.visible()) {
+            modalWindow.close();
+        }
+    }
+    modalWindow.show();
+};
 
 
 
