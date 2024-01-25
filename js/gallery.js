@@ -74,15 +74,16 @@ galleryEl.insertAdjacentHTML("afterbegin", galleryMarkUp);
 function createBoxItem(images) {
     return images.map(
         ({ preview, original, description }) =>
-            `<a class="gallery__item" href="${original}">
+            `<a class="gallery-item" href="${original}">
                 <img
-                class="gallery__image"
+                class="gallery-image"
                 src="${preview}"
                 alt="${description}"
+                data-source="${original}"
                 />
             </a>`).join('')
 };
 
-// const lightbox = new SimpleLightbox('.gallery',);
+
 
 
